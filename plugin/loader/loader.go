@@ -96,6 +96,7 @@ type PluginLoader struct {
 
 // NewPluginLoader creates new plugin loader.
 func NewPluginLoader(repo string) (*PluginLoader, error) {
+	fmt.Errorf("loading from repo %s", repo)
 	loader := &PluginLoader{plugins: make([]plugin.Plugin, 0, len(preloadPlugins)), repo: repo}
 	if repo != "" {
 		switch plugins, err := readPluginsConfig(repo, config.DefaultConfigFile); {
